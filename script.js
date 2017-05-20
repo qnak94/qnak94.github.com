@@ -4,6 +4,7 @@
 var d = new Date();
 var n = d.getTime();
 var shots = 3;
+var lock_key;
 function start() {
     setInterval(writeRes, 1000);
     generate_lock_key();
@@ -80,7 +81,7 @@ function writeRes() {
 function generate_lock_key() {
     var x_low = Math.abs(Math.round((Math.random() + n / Math.pow(2, 43)) * Math.pow(2, 31)));
     var x_high = Math.abs(Math.round((Math.random() + n / Math.pow(2, 43)) * Math.pow(2, 31)));
-    var lock_key = Number(x_low).toString(16).concat(Number(x_high).toString(16));
+    lock_key = Number(x_low).toString(16).concat(Number(x_high).toString(16));
     document.getElementById('current__lock').value = lock_key;
     document.getElementById('input__lock').value = lock_key;
 }
@@ -133,9 +134,13 @@ function lock() {
 
                     document.getElementById('show__button').removeAttribute("disabled");
                     document.getElementById('show__button').style.backgroundColor = "green";
+                    
+                    shots = 3;
+                    console.log(shots);
+                    document.getElementById('input__lock').value = lock_key;
                 }
             }
-            shots = 3;
+
         }
         else
             shots--;
