@@ -135,6 +135,7 @@ function lock() {
                     document.getElementById('show__button').style.backgroundColor = "green";
                 }
             }
+            shots = 3;
         }
         else
             shots--;
