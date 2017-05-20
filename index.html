@@ -57,9 +57,29 @@
                 <li class="react">Целостность <input type="text" id="scope__state" size="6"></li>
             </ul>
         </div>
+
     </div>
-    <div class="wi__stick">
-        <div class="menu__stick"></div>
+    <div class="wi__stick cfx">
+        <div class="menu__stick cfx">
+            <div class="rcu">
+                <input class="lock__button" id="lock__button" type="button" onclick="lock()" value="LOCK">
+                <input class="unlock__button" id="unlock__button" type="button" onclick="" value="UNLOCK">
+                <input class="show__button" id="show__button" type="button" onclick="" value="SHOW">
+                <input class="state" type="input" disabled value="State">
+            </div>
+        </div>
+        <div class="keys">
+            <div class="lock">
+                <p id="text__closed">Закрытие </p>
+                <input class="key" id="current__lock" type="input" disabled value="current">
+                <input class="key white" id="input__lock" type="input"  value="variable">
+            </div>
+            <div class="unlock">
+                <p>Открытие</p>
+                <input class="key" id="current__unlock" type="input" disabled value="current">
+                <input class="key white" id="input__unlock" type="input"  value="variable">
+            </div>
+        </div>
     </div>
     <script type="text/javascript" src="script.js"></script>
 </body>

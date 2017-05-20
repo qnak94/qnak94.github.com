@@ -1,8 +1,8 @@
 .cfx::after { content: ""; display: table; clear: both; }
 .wrapper{
-    width: 960px;
+    width: 1200px;
     margin: 0 auto;
-    background: #eee;
+    background: #fff;
     box-sizing: border-box;
 }
 .left__menu{
@@ -13,7 +13,7 @@
     margin-top: 0;
 }
 .center__image{
-    width: 360px;
+    width: 600px;
     float: left;
     background: yellow;
     box-sizing: border-box;
@@ -40,7 +40,51 @@ input{
 .start__button{
     float: left;
     background: green;
-    color: #ffffff;
+    color: #fff;
     padding:10px;
     margin: 5px;
 }
+.rcu{
+    float: left;
+    margin: 0 auto;
+    background: #fff;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.lock__button, .unlock__button, .show__button{
+    display: block;
+    float: left;
+    background: green;
+    color: #fff;
+    padding:8px;
+    margin: 3px;
+}
+.state, .key{
+    display: block;
+    background: #eee;
+    color: #000;
+    padding:10px;
+    margin: 5px;
+    clear: left;
+    border: 2px black solid;
+    text-align: center;
+}
+.wi__stick{
+    width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    box-sizing: border-box;
+}
+.menu__stick{
+    margin: 0 auto;
+    width: 240px;
+}
+.keys{
+    display: inline-block;
+    margin: 0 auto;
+    margin-left:400px;
+}
+.white{
+    background: #fff;
+}
+
