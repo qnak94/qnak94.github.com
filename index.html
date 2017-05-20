@@ -13,7 +13,7 @@
 
         <div class="left__menu">
             <ul>
-                <li class="func">Датчик удара <input id="hit__val" name="hit__dat" type="number" max="100" min="0" value="0" step="5" size="1"></li>
+                <li class="func">Датчик удара <input id="hit__val" name="hit__dat" type="number" max="255" min="0" value="0" step="5" size="1"></li>
                 <li class="func">Акселерометр
                     <ul>
                         <li class="func">X <input type="number" id="X" type="number" max="20" min="-20" value="0" step="1" size="1"></li>
@@ -25,38 +25,36 @@
                     <ul>
                         <li class="func">Передняя левая <input type="checkbox" id="LF" checked value="1"></li>
                         <li class="func">Передняя правая <input type="checkbox" id="RF" checked value="1"></li>
-                        <li class="func">Задняя левая <input type="checkbox" id="LB" checked value="1"></li>
-                        <li class="func">Задняя правая <input type="checkbox" id="RB" checked value="1"></li>
                         <li class="func">Капот <input type="checkbox" id="Ca" checked value="1"></li>
                         <li class="func">Багажник <input type="checkbox" id="Bg" checked value="1"></li>
                     </ul>
                 </li>
-                <li class="func">Удаленность брелка <input id="distance" type="number" max="300" min="1" value="1" step="1" size="1"></li>
+                <li class="func">Удаленность брелка <input id="distance" type="number" max="1000" min="1" value="1" step="1" size="1"></li>
                 <li class="func">Датчик объема <input type="checkbox" id="scope" checked value="1"></li>
-                <li class="func"></li>
-                <li class="func"></li>
             </ul>
         </div>
         <div class="center__image"></div>
         <div class="right__menu">
             <ul>
                 <li class="react">Реакция датчика удара <input type="text" id="hit__res" size="6"></li>
-                <li class="react">Акселерометр <input type="text" id="acs__res" size="6">
+                </li>
+                <li class="func">Акселерометр
+                    <ul>
+                        <li class="func">X <input type="text" id="X__res" size="6"></li>
+                        <li class="func">Y <input type="text" id="Y__res" size="6"></li>
+                        <li class="func">Z <input type="text" id="Z__res" size="6"></li>
+                    </ul>
                 </li>
                 <li class="react">Замки:
                     <ul>
                         <li class="func">Передняя левая <input type="text" id="LF__res" size="6"></li>
                         <li class="func">Передняя правая <input type="text" id="RF__res" size="6"></li>
-                        <li class="func">Задняя левая <input type="text" id="LB__res" size="6"></li>
-                        <li class="func">Задняя правая <input type="text" id="RB__res" size="6"></li>
                         <li class="func">Капот <input type="text" id="Ca__res" size="6"></li>
                         <li class="func">Багажник <input type="text" id="Bg__res" size="6"></li>
                     </ul>
                 </li>
-                <li class="react"></li>
-                <li class="react"></li>
-                <li class="react"></li>
-                <li class="react"></li>
+                <li class="react">Состояние сигнала <input type="text" id="signal__state" size="6"></li>
+                <li class="react">Целостность <input type="text" id="scope__state" size="6"></li>
             </ul>
         </div>
     </div>
