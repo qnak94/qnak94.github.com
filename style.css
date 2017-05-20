@@ -1,6 +1,6 @@
 .cfx::after { content: ""; display: table; clear: both; }
 .wrapper{
-    width: 1200px;
+    min-width: 1200px;
     margin: 0 auto;
     background: #fff;
     box-sizing: border-box;
