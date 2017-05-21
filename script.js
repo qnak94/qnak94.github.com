@@ -6,6 +6,7 @@ var n = d.getTime();
 var shots = 3;
 var key_on,key_off;
 var state = 'guarded';
+var mode;
 
 function set_state(element,state){
 
@@ -260,8 +261,11 @@ function getScopeState() {
 
 function writeRes() {
     document.getElementById('hit__res').value=getHitLevel();
-    getLockState();
-    getDoorsState();
+    if(!(mode=='lock_mode' || mode == 'unlock_mode' || mode == 'warning_mode' || mode == 'alarm_mode')){
+        getLockState();
+        getDoorsState();
+    }
+    console.log(mode);
     getAccelLevel();
     getDistanceState();
     getScopeState();
@@ -290,6 +294,7 @@ function lock() {
         set_state('lock__button', 'inactive');
         set_state('input__unlock','active');
         set_state('unlock__button', 'active');
+        signals('lock_mode');
 
     }
     else{
@@ -340,12 +345,16 @@ function lock() {
 function unlock() {
     if(document.getElementById('current__unlock').value == document.getElementById('input__unlock').value)
     {
+
         generate_unlock_key();
+        mode = 'unlock_mode';
         state = 'unlocked';
+
         set_state('input__unlock','inactive');
         set_state('unlock__button', 'inactive');
         set_state('input__lock','active');
         set_state('lock__button', 'active');
+        signals('unlock_mode');
     }
     else{
         console.log(shots);
@@ -390,4 +399,44 @@ function unlock() {
         // document.body.style.backgroundColor = "#FF0000";
     }
 
+}
+function signals(mode) {
+    var blink_n;
+    var alarm_n;
+    var delay;
+   if(mode=='lock_mode' || mode == 'unlock_mode' || mode == 'warning_mode'){
+        for(blink_n=3;blink_n>0;blink_n--) {
+            document.getElementById('left__side').src = "img/left_side/left_side_lights.png";
+            document.getElementById('right__side').src = "img/right_side/right_side_lights.png";
+            setInterval(function () {}, 500);
+            document.getElementById('left__side').src = "img/left_side/left_side.png";
+            document.getElementById('right__side').src = "img/right_side/right_side.png";
+            setInterval(function () {}, 500);
+        }
+    }
+    else if(mode=='show_mode'){
+        for(var blink_n=6;blink_n!=0;blink_n--) {
+            document.getElementById('left__side').src = "img/left_side/left_side_lights.png";
+            document.getElementById('right__side').src = "img/right_side/right_side_lights.png";
+            setInterval(function () {}, 500);
+            document.getElementById('left__side').src = "img/left_side/left_side.png";
+            document.getElementById('right__side').src = "img/right_side/right_side.png";
+            setInterval(function () {}, 500);
+        }
+    }
+    else if(mode=='alarm_mode'){
+        for(var blink_n=1;blink_n!=0;blink_n--) {
+            document.getElementById('left__side').src = "img/left_side/left_side_lights.png";
+            document.getElementById('right__side').src = "img/right_side/right_side_lights.png";
+            setInterval(function () {}, 500);
+            document.getElementById('left__side').src = "img/left_side/left_side.png";
+            document.getElementById('right__side').src = "img/right_side/right_side.png";
+            setInterval(function () {}, 500);
+        }
+    }
+
+
+
+    //setInterval(lights_alarm, 1000);
+//.style.display = "none";
 }
