@@ -21,19 +21,30 @@
                         <li class="func">Z <input type="number" id="Z" type="number" max="20" min="-20" value="0" step="1" size="1"></li>
                     </ul>
                 </li>
-                <li class="func">Датчик замков
+                <li class="func">Состояние замков
                     <ul>
-                        <li class="func">Передняя левая <input type="checkbox" id="LF" checked value="1"></li>
-                        <li class="func">Передняя правая <input type="checkbox" id="RF" checked value="1"></li>
-                        <li class="func">Капот <input type="checkbox" id="Ca" checked value="1"></li>
-                        <li class="func">Багажник <input type="checkbox" id="Bg" checked value="1"></li>
+                        <li class="func">Передняя левая <input type="checkbox" id="left__door__lock" checked value="1"></li>
+                        <li class="func">Передняя правая <input type="checkbox" id="right__door__lock" checked value="1"></li>
+                        <li class="func">Капот <input type="checkbox" id="capote__lock" checked value="1"></li>
+                        <li class="func">Багажник <input type="checkbox" id="trunk__lock" checked value="1"></li>
+                    </ul>
+                </li>
+                <li class="func">Состояние дверей
+                    <ul>
+                        <li class="func">Передняя левая <input type="checkbox" id="left__door" checked value="1"></li>
+                        <li class="func">Передняя правая <input type="checkbox" id="right__door" checked value="1"></li>
+                        <li class="func">Капот <input type="checkbox" id="capote" checked value="1"></li>
+                        <li class="func">Багажник <input type="checkbox" id="trunk" checked value="1"></li>
                     </ul>
                 </li>
                 <li class="func">Удаленность брелка <input id="distance" type="number" max="1000" min="1" value="1" step="1" size="1"></li>
                 <li class="func">Датчик объема <input type="checkbox" id="scope" checked value="1"></li>
             </ul>
         </div>
-        <div class="center__image"></div>
+        <div class="center__image">
+            <img src="img/left_side/left_side.png" alt="" id="left__side">
+            <img src="img/right_side/right_side.png" alt="" id="right__side">
+        </div>
         <div class="right__menu">
             <ul>
                 <li class="react">Реакция датчика удара <input type="text" id="hit__res" size="6"></li>
@@ -47,10 +58,18 @@
                 </li>
                 <li class="react">Замки:
                     <ul>
-                        <li class="func">Передняя левая <input type="text" id="LF__res" size="6"></li>
-                        <li class="func">Передняя правая <input type="text" id="RF__res" size="6"></li>
-                        <li class="func">Капот <input type="text" id="Ca__res" size="6"></li>
-                        <li class="func">Багажник <input type="text" id="Bg__res" size="6"></li>
+                        <li class="func">Левой двери <input type="text" id="left__door__lock__res" size="6"></li>
+                        <li class="func">Правой двери <input type="text" id="right__door__lock__res" size="6"></li>
+                        <li class="func">Капот <input type="text" id="capote__lock__res" size="6"></li>
+                        <li class="func">Багажник <input type="text" id="trunk__lock__res" size="6"></li>
+                    </ul>
+                </li>
+                <li class="react">Двери:
+                    <ul>
+                        <li class="func">Передняя левая <input type="text" id="left__door__res" size="6"></li>
+                        <li class="func">Передняя правая <input type="text" id="right__door__res" size="6"></li>
+                        <li class="func">Капот <input type="text" id="capote__res" size="6"></li>
+                        <li class="func">Багажник <input type="text" id="trunk__res" size="6"></li>
                     </ul>
                 </li>
                 <li class="react">Состояние сигнала <input type="text" id="signal__state" size="6"></li>
@@ -63,12 +82,13 @@
         <div class="menu__stick cfx">
             <div class="rcu">
                 <input class="lock__button" id="lock__button" type="button" onclick="lock()" value="LOCK">
-                <input class="unlock__button" id="unlock__button" type="button" onclick="" value="UNLOCK">
+                <input class="unlock__button" id="unlock__button" type="button" onclick="unlock()" value="UNLOCK">
                 <input class="show__button" id="show__button" type="button" onclick="" value="SHOW">
                 <input class="state" type="input" disabled value="State">
             </div>
         </div>
         <div class="keys">
+            <p id="info_message"></p>
             <div class="lock">
                 <p id="text__closed">Закрытие </p>
                 <input class="key" id="current__lock" type="input" disabled value="current">

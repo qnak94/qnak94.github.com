@@ -1,6 +1,6 @@
 .cfx::after { content: ""; display: table; clear: both; }
 .wrapper{
-    min-width: 1200px;
+    min-width: 1300px;
     margin: 0 auto;
     background: #fff;
     box-sizing: border-box;
@@ -15,9 +15,11 @@
 .center__image{
     width: 600px;
     float: left;
-    background: yellow;
+    background: white;
     box-sizing: border-box;
-    height: 300px;
+}
+#left__side, #right__side{
+    margin: -60px auto;
 }
 .right__menu{
     width: 300px;
