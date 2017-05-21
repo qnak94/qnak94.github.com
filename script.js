@@ -108,7 +108,7 @@ function getDoorsState() {
         bg:document.getElementById('trunk').checked
     }
     //console.log(doors);
-    //мне за этот участок кода стыдно
+    //мне за этот участок кода стыдно, еще стыднее
     if(doors.lf){//закрыта левая дверь
         document.getElementById('left__door__res').value = "Closed";
 
