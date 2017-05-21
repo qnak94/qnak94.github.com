@@ -167,8 +167,8 @@ function getDoorsState() {
 
                 if(doors.bg){//закрыт багажник
                     document.getElementById('trunk__res').value = "Closed";
-                    document.getElementById('left__side').src="img/left_side/left_side_trunk.png";
-                    document.getElementById('right__side').src="img/right_side/right_side_trunk&door.png";
+                    document.getElementById('left__side').src="img/left_side/left_side_capote.png";
+                    document.getElementById('right__side').src="img/right_side/right_side_capote&door.png";
                 }
                 else{//открыт багажник
                     document.getElementById('trunk__res').value = "Open";
